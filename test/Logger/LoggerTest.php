@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace GitHubWorkflowTools\Test\Logger;
 
 use GitHubWorkflowTools\Logger\Logger;
+use GitHubWorkflowTools\OutputInterface;
 use Mockery\Adapter\Phpunit\MockeryTestCase;
-use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * @covers \GitHubWorkflowTools\Logger\Logger

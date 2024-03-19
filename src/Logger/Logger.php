@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace GitHubWorkflowTools\Logger;
 
-use Symfony\Component\Console\Output\OutputInterface;
+use GitHubWorkflowTools\OutputInterface;
 
 class Logger
 {
