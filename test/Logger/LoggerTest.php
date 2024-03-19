@@ -4,33 +4,18 @@ declare(strict_types=1);
 
 namespace GitHubWorkflowTools\Test\Logger;
 
+use Generator;
 use GitHubWorkflowTools\Logger\Logger;
 use GitHubWorkflowTools\OutputInterface;
 use Mockery\Adapter\Phpunit\MockeryTestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
-/**
- * @covers \GitHubWorkflowTools\Logger\Logger
- */
+#[CoversClass(Logger::class)]
 class LoggerTest extends MockeryTestCase
 {
-
-    /**
-     * @test
-     * @dataProvider data
-     */
-    public function loggerTest(string $method, array $logData, string $expectation)
-    {
-        $output = mock(OutputInterface::class);
-
-        $output->shouldReceive('writeln')->once()->with($expectation);
-
-        $subject = new Logger($output);
-        $this->assertTrue(method_exists($subject, $method));
-        $this->assertTrue(is_callable([$subject, $method]));
-        $subject->$method(...$logData);
-    }
-
-    public static function data(): \Generator
+    public static function data(): Generator
     {
         yield ['startGroup', ['group1'], '::group::group1'];
         yield ['write', ['test'], 'test'];
@@ -40,6 +25,22 @@ class LoggerTest extends MockeryTestCase
         yield ['debug', ['debug test'], '::debug::debug test'];
         yield ['log', ['unknown', 'unknown test'], '::unknown::unknown test'];
         yield ['endGroup', [], '::endgroup::'];
-        yield ['startGroup', [ null ], '::group::group 1'];
+        yield ['startGroup', [null], '::group::group 1'];
+    }
+
+    #[Test]
+    #[DataProvider('data')]
+    public function loggerTest(string $method, array $logData, string $expectation): void
+    {
+        $this->expectOutputString('');
+
+        $output = mock(OutputInterface::class);
+        $output->shouldReceive('writeln')->once()->with($expectation);
+
+        $subject = new Logger($output);
+        $this->assertTrue(method_exists($subject, $method));
+        $this->assertTrue(is_callable([$subject, $method]));
+
+        $subject->$method(...$logData);
     }
 }

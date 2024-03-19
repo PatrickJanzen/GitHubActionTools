@@ -8,21 +8,20 @@ use GitHubWorkflowTools\OutputInterface;
 
 class Logger
 {
-
     const GROUP = 'group';
     const NOTICE = 'notice';
     const WARNING = 'warning';
     const ERROR = 'error';
     const DEBUG = 'debug';
     const END_GROUP = 'endgroup';
+
     private static int $groupCounter = 0;
 
     public function __construct(private OutputInterface $out)
     {
-
     }
 
-    private static function addIfSet(array &$data, string $template, null|string|int $value)
+    private static function addIfSet(array &$data, string $template, string|int|null $value): void
     {
         if ($value !== null) {
             $data[] = sprintf($template, $value);

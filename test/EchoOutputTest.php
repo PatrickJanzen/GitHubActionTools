@@ -5,22 +5,18 @@ declare(strict_types=1);
 namespace GitHubWorkflowTools\Test;
 
 use GitHubWorkflowTools\EchoOutput;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @covers \GitHubWorkflowTools\EchoOutput
- */
-#[CoversClass]
+#[CoversClass(EchoOutput::class)]
 class EchoOutputTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function outputTest()
+    #[Test]
+    public function outputTest(): void
     {
         $this->expectOutputString('foo' . PHP_EOL);
         $subject = new EchoOutput();
         $subject->writeln('foo');
-
     }
 }
