@@ -8,7 +8,7 @@ use GitHubWorkflowTools\EchoOutput;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers GitHubWorkflowTools\EchoOutput
+ * @covers \GitHubWorkflowTools\EchoOutput
  */
 class EchoOutputTest extends TestCase
 {
