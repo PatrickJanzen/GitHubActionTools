@@ -1,0 +1,19 @@
+{
+    "timeout": 10,
+    "minMsi": 80,
+    "minCoveredMsi": 90,
+    "source": {
+        "directories": [
+            "src"
+        ],
+        "excludes": [
+            "PHPCodeSniffer"
+        ]
+    },
+    "logs": {
+        "text": "infection.log"
+    },
+    "mutators": {
+        "@default": true
+    }
+}
