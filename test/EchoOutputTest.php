@@ -10,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @covers \GitHubWorkflowTools\EchoOutput
  */
+#[CoversClass]
 class EchoOutputTest extends TestCase
 {
     /**

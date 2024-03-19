@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit
-        beStrictAboutTestsThatDoNotTestAnything="false"
-        bootstrap="vendor/autoload.php"
-        colors="true"
-        enforceTimeLimit="true"
-        executionOrder="random"
-        resolveDependencies="true"
-        stopOnRisky="true"
-        timeoutForSmallTests="2"
-        timeoutForLargeTests="180"
-        verbose="false"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
-    <coverage processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">./src</directory>
-        </include>
-        <report>
-            <text outputFile="php://stdout"/>
-        </report>
-    </coverage>
-    <testsuites>
-        <testsuite name="AllUnitTests">
-            <directory>test</directory>
-        </testsuite>
-    </testsuites>
-    <logging/>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" beStrictAboutTestsThatDoNotTestAnything="false" bootstrap="vendor/autoload.php" colors="true" executionOrder="random" resolveDependencies="true" stopOnRisky="true" timeoutForSmallTests="2" timeoutForLargeTests="180" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd" cacheDirectory=".phpunit.cache">
+  <coverage>
+    <report>
+      <text outputFile="php://stdout"/>
+    </report>
+  </coverage>
+  <testsuites>
+    <testsuite name="AllUnitTests">
+      <directory>test</directory>
+    </testsuite>
+  </testsuites>
+  <logging/>
+  <source>
+    <include>
+      <directory suffix=".php">./src</directory>
+    </include>
+  </source>
 </phpunit>

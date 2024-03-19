@@ -30,7 +30,7 @@ class LoggerTest extends MockeryTestCase
         $subject->$method(...$logData);
     }
 
-    public function data(): \Generator
+    public static function data(): \Generator
     {
         yield ['startGroup', ['group1'], '::group::group1'];
         yield ['write', ['test'], 'test'];
