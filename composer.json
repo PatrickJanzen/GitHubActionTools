@@ -18,12 +18,12 @@
   },
   "autoload": {
     "psr-4": {
-      "GitHubWorkflowTools\\": "src/"
+      "GitHubActionTools\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "GitHubWorkflowTools\\Test\\": "test/"
+      "GitHubActionTools\\Test\\": "test/"
     }
   },
   "scripts": {

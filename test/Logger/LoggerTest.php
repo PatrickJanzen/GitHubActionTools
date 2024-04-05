@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace GitHubWorkflowTools\Test\Logger;
+namespace GitHubActionTools\Test\Logger;
 
 use Generator;
-use GitHubWorkflowTools\Logger\Logger;
-use GitHubWorkflowTools\Logger\OutputInterface;
+use GitHubActionTools\Logger\Logger;
+use GitHubActionTools\Logger\OutputInterface;
 use Mockery\Adapter\Phpunit\MockeryTestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;

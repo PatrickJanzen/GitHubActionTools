@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GitHubWorkflowTools\Logger;
+namespace GitHubActionTools\Logger;
 
 class EchoOutput implements OutputInterface
 {
