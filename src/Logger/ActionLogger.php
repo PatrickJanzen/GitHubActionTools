@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace GitHubActionTools\Logger;
 
-class Logger
+class ActionLogger
 {
     const GROUP = 'group';
     const NOTICE = 'notice';

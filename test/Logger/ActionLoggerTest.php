@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace GitHubActionTools\Test\Logger;
 
 use Generator;
-use GitHubActionTools\Logger\Logger;
+use GitHubActionTools\Logger\ActionLogger;
 use GitHubActionTools\Logger\OutputInterface;
 use Mockery\Adapter\Phpunit\MockeryTestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 
-#[CoversClass(Logger::class)]
-class LoggerTest extends MockeryTestCase
+#[CoversClass(ActionLogger::class)]
+class ActionLoggerTest extends MockeryTestCase
 {
     public static function data(): Generator
     {
@@ -37,7 +37,7 @@ class LoggerTest extends MockeryTestCase
         $output = mock(OutputInterface::class);
         $output->shouldReceive('writeln')->once()->with($expectation);
 
-        $subject = new Logger($output);
+        $subject = new ActionLogger($output);
         $this->assertTrue(method_exists($subject, $method));
         $this->assertTrue(is_callable([$subject, $method]));
 
