@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GitHubWorkflowTools\Test;
+namespace GitHubActionTools\Test;
 
-use GitHubWorkflowTools\Logger\EchoOutput;
+use GitHubActionTools\Logger\EchoOutput;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
