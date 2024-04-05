@@ -1,0 +1,14 @@
+name: Tests
+run-name: running tests triggered by action '${{ github.event_name }}' on '${{ github.ref_name }}' by @${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - '**'
+jobs:
+  infection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: php-actions/composer@v6
+      - run: composer infection

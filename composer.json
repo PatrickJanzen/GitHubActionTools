@@ -1,11 +1,10 @@
 {
-  "name": "rdss/github_workflow_tools",
+  "name": "patrickjanzen/github_workflow_tools",
   "type": "library",
   "license": "proprietary",
   "authors": [
     {
-      "name": "IT-Verticals",
-      "email": "dev@rdss.it"
+      "name": "Patrick Janzen"
     }
   ],
   "require": {
@@ -15,8 +14,7 @@
     "infection/infection": "^0.27.10",
     "mockery/mockery": "^1.6",
     "phpunit/phpunit": "^10",
-    "roave/security-advisories": "dev-latest",
-    "zooroyal/coding-standard": "^4.2.0"
+    "roave/security-advisories": "dev-latest"
   },
   "autoload": {
     "psr-4": {
@@ -28,29 +26,17 @@
       "GitHubWorkflowTools\\Test\\": "test/"
     }
   },
-  "config": {
-    "sort-packages": true,
-    "allow-plugins": {
-      "mindplay/composer-locator": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "phpstan/extension-installer": true,
-      "infection/extension-installer": true,
-      "php-http/discovery": false
-    }
-  },
-  "repositories": {
-    "packagist.org": false,
-    "private-packagist": {
-      "type": "composer",
-      "url": "https://repo.packagist.com/zooroyal/"
-    }
-  },
   "scripts": {
-    "test": [
+    "infection": [
       "infection -n --threads=4 --no-progress -s"
     ],
-    "unittest": [
-      "phpunit -c phpunit.xml.dist --colors=auto --coverage-html=.coverage"
+    "phpunit": [
+      "phpunit -c phpunit.xml.dist --colors=auto --coverage-html=.qa/.coverage"
     ]
+  },
+  "config": {
+    "allow-plugins": {
+      "infection/extension-installer": true
+    }
   }
 }

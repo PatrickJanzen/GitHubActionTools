@@ -6,7 +6,7 @@ namespace GitHubWorkflowTools\Test\Logger;
 
 use Generator;
 use GitHubWorkflowTools\Logger\Logger;
-use GitHubWorkflowTools\OutputInterface;
+use GitHubWorkflowTools\Logger\OutputInterface;
 use Mockery\Adapter\Phpunit\MockeryTestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;

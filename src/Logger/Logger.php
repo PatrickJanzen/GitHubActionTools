@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace GitHubWorkflowTools\Logger;
 
-use GitHubWorkflowTools\OutputInterface;
-
 class Logger
 {
     const GROUP = 'group';

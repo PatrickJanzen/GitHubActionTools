@@ -1,5 +1,4 @@
-/.coverage/
-/infection.log
+/.qa/
 /vendor/
 /.phpunit.cache/
 /.idea/
